@@ -11,13 +11,15 @@ public class Main {
                 35, "petrov33@gmail.com", "petrvlad3333");
         Admin adminVlad = new Admin("Vlad", "Nepyjvoda",
                 27, "nepyjvoda@gmail.com", "Nepyjvoda222");
+        UserService userService = new UserService();
+        AdminService adminService = new AdminService();
 
-        new UserService().writeData(adminVladimir);
-        new AdminService().writeData(adminVladimir);
-        new AdminService().writeData(userVasiliy);
+        userService.writeData(adminVladimir);
+        adminService.writeData(adminVladimir);
+        adminService.writeData(userVasiliy);
 
-        new AdminService().checkUser(userVasiliy);
-        new UserService().checkUser(adminVladimir);
+        adminService.checkUser(userVasiliy);
+        userService.checkUser(adminVladimir);
 
 
     }
