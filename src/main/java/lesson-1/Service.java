@@ -12,7 +12,8 @@ public interface Service {
         Scanner scanner = new Scanner(file);
 
         while (scanner.hasNextLine()) {
-            if (person.getMail().equals(scanner.nextLine())) {
+
+            if (scanner.nextLine().equals(person.getMail())) {
                 System.out.println("true!");
                 return true;
             }
