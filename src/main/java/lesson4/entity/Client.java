@@ -38,4 +38,10 @@ public class Client {
         this.sum = sum;
     }
 
+    public Client() {
+        this.clientId = clientId;
+        this.surname = surname;
+        this.clientAccount = clientAccount;
+        this.sum = sum;
+    }
 }
