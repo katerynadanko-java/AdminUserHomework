@@ -5,9 +5,9 @@ import util.Helper;
 
 public class TransactionService {
 
-    public static void TransferOfMoney(Client client, String clientAccountTo){
+    public static void transferOfMoney(Client client, String accountTo){
 
-        String clientAccountFrom = client.getClientAccount();
-        Helper.method3(clientAccountFrom, clientAccountTo);
+        String accountFrom = client.getAccount();
+        Helper.equalsAccount(accountFrom, accountTo);
     }
 }

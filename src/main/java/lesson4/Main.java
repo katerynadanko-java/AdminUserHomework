@@ -10,71 +10,47 @@ public class Main {
 
     public static void main(String[] args) {
         Client client = new Client();
+        final String FROM = "from which withdraw money";
+        final String TO = "to which transfer money";
 
+        client.setAccount(enterAccount(FROM));
+        String accountTo = enterAccount(TO);
+        client.setSum(enterSum());
+
+        TransactionService.transferOfMoney(client, accountTo);
+        System.out.println("The sum is successfully transferred!");
+    }
+
+    private static String enterAccount(String fromTo) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter client Account From:");
-        String clientAccountFrom;
+        System.out.println("Enter client account " + fromTo + " :");
+        String account;
         while (true) {
-            clientAccountFrom = scanner.nextLine();
+            account = scanner.nextLine();
             try {
-                Helper.method1(clientAccountFrom);
-                client.setClientAccount(clientAccountFrom);
+                Helper.wrongFieldLength(account);
                 break;
             } catch (WrongFieldException e) {
-                System.out.println("Client account should be 10-signed number! Enter the value client Account From again!");
+                System.out.println("Client account should be 10-signed number! Enter the value " +
+                        "client account again! " + fromTo);
             }
+        }
+        return account;
+    }
 
-        }
-        System.out.println("Enter client Account To:");
-        String clientAccountTo;
-        while (true) {
-            clientAccountTo = scanner.nextLine();
-            try {
-                Helper.method1(clientAccountTo);
-                break;
-            } catch (WrongFieldException e) {
-                System.out.println("Client account should be 10-signed number! Enter the value client Account To again!");
-            }
-        }
-                System.out.println("Enter the sum:");
+    private static Double enterSum() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter sum:");
+        Double sum;
         while (true) {
             try {
-                Double sum = scanner.nextDouble();
-                Helper.method2(sum);
-                client.setSum(sum);
+                sum = scanner.nextDouble();
+                Helper.wrongSum(sum);
                 break;
             } catch (WrongSumException e) {
-                System.out.println("The sum is incorrect! The sum should be less then 1000! Enter the value sum again!");
+                System.out.println("The sum is incorrect! The sum should be less then 1000! " +
+                        "Enter the value sum again!");
             }
-        }
-            TransactionService.TransferOfMoney(client, clientAccountTo);
-            System.out.println("The sum is successfully transferred!");
-
-        System.out.println("On client account is: " + client.getSum() + " dollars");
+        }return sum;
     }
-}
-
-
-
-
-
-
-
-// try with resources
-//
-//            System.out.println("Enter client Account From:");
-//while (true) {
-//    try (Scanner scanner = new Scanner(System.in)) {
-//        String clientAccountFrom = scanner.nextLine();
-//
-//        if (clientAccountFrom.length() == 10) {
-//            Helper.method1(clientAccountFrom);
-//            client.setClientAccount(clientAccountFrom);
-//            System.out.println(clientAccountFrom);
-//                break;
-//        }
-//        throw new WrongFieldException();
-//    } catch (WrongFieldException e) {
-//        System.out.println("Client account should be 10-signed number! Enter the value client Account From again!");
-//    }
-//}
+        }

@@ -1,17 +1,17 @@
 package entity;
 
 public class Client {
-    private String clientId;
+    private String id;
     private String surname;
-    private String clientAccount;
+    private String account;
     private double sum;
 
-    public String getClientId() {
-        return clientId;
+    public String getId() {
+        return id;
     }
 
-    public void setClientId(String clientId) {
-        this.clientId = clientId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getSurname() {
@@ -22,12 +22,12 @@ public class Client {
         this.surname = surname;
     }
 
-    public String getClientAccount() {
-        return clientAccount;
+    public String getAccount() {
+        return account;
     }
 
-    public void setClientAccount(String clientAccount) {
-        this.clientAccount = clientAccount;
+    public void setAccount(String account) {
+        this.account = account;
     }
 
     public double getSum() {
@@ -39,9 +39,9 @@ public class Client {
     }
 
     public Client() {
-        this.clientId = clientId;
+        this.id = id;
         this.surname = surname;
-        this.clientAccount = clientAccount;
+        this.account = account;
         this.sum = sum;
     }
 }
