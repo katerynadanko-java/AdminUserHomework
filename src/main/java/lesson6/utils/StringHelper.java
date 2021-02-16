@@ -6,12 +6,11 @@ public class StringHelper {
             throw new NullPointerException("Array of characters should not be null!");
         }
         String secondString = String.valueOf(characters);
-        String firstTrim = firstString.trim();
-        String secondTrim = secondString.trim();
-        if (firstString == null || firstTrim.isEmpty() || secondString == null || secondTrim.isEmpty()) {
-            throw new SecurityException("None of strings should not be empty!");
+        if (firstString == null || firstString.trim().isEmpty()
+                || secondString == null || secondString.trim().isEmpty()) {
+            throw new SecurityException("None of strings should not be empty or null!");
         }
-        String result = String.format(firstTrim.toUpperCase() + "%s" + secondTrim.toLowerCase(), " ");
+        String result = firstString.trim().toUpperCase() + " " + secondString.trim().toLowerCase();
         String center;
         if (result.length() % 2 == 0) {
             center = result.substring((result.length() / 2) - 1, (result.length() / 2) + 1);

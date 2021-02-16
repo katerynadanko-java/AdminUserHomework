@@ -1,4 +1,5 @@
-package utils;
+import utils.StringHelper;
+import utils.ValidationHelper;
 
 public class Main {
 
@@ -9,6 +10,6 @@ public class Main {
 
         ValidationHelper.phoneValidation("+38(067) 788 62 56");
         ValidationHelper.emailValidation("katerynadanko@gmail.com");
-        ValidationHelper.dateOfBirthValidation("10.11.2000");
+        ValidationHelper.dateOfBirthValidation("10.02.2021");
     }
 }
