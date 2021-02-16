@@ -9,9 +9,6 @@ public class ValidationHelper {
 
     static void phoneValidation(String phoneNumber) {
         Pattern pattern = Pattern.compile("^\\+[3][8]\\(?[0]\\d{2}\\)?\\-?\\s?\\d{3}\\-?\\s?\\d{2}\\-?\\s?\\d{2}");
-        // проверка +38(067)788-62-56
-        // проверка +38(067) 788 62 56
-        // проверка +380677886256
         Matcher input = pattern.matcher(phoneNumber);
         boolean matches = input.matches();
         if (matches)
