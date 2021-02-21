@@ -1,3 +1,5 @@
+package lesson1;
+
 import java.io.FileWriter;
 import java.io.IOException;
 

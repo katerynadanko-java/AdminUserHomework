@@ -1,4 +1,4 @@
-package lesson-1;
+package lesson1;
 
 public enum Role {
     ADMIN, USER

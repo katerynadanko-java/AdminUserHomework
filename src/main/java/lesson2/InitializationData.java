@@ -1,14 +1,16 @@
+package lesson2;
+
 public class InitializationData {
 
-    String pseudonymString = "Pseudonym";
-    String mailString = "mail";
+    String nicknameString = "Nickname";
+    String mailString = "mailJavaHillel";
     String gmailCom = "@gmail.com";
 
     public Information fillInformation(Information information) {
         for (int i = 0; i < 30; i++) {
-            information.getPseudonym().add(i, pseudonymString + i);
+            information.getNickname().add(i, nicknameString + i);
             information.getMail().add(mailString + i + gmailCom);
-            information.getUserMail().put(mailString + i + gmailCom, pseudonymString + i);
+            information.getUserMail().put(mailString + i + gmailCom, nicknameString + i);
         }
         return information;
     }
@@ -16,18 +18,18 @@ public class InitializationData {
     public Information add10value(Information information) {
         for (int i = 0; i < 10; i++) {
             if (checkEqualsValue(information)) {
-                information.getPseudonym().add(pseudonymString);
+                information.getNickname().add(nicknameString);
             }
             information.getMail().add(mailString + gmailCom);
-            information.getUserMail().put(mailString + gmailCom, pseudonymString);
+            information.getUserMail().put(mailString + gmailCom, nicknameString);
     }
         System.out.println(collectionSize(information));
         return information;
 }
 
     private boolean checkEqualsValue(Information information) {
-        for (int i = 0; i < information.getPseudonym().size(); i++) {
-            if (information.getPseudonym().contains(pseudonymString)) {
+        for (int i = 0; i < information.getNickname().size(); i++) {
+            if (information.getNickname().contains(nicknameString)) {
                 return false;
             }
         }
@@ -35,8 +37,8 @@ public class InitializationData {
     }
 
     private boolean collectionSize(Information information) {
-        if (information.getPseudonym().size() == information.getMail().size() ||
-                information.getPseudonym().size() == information.getUserMail().size()) {
+        if (information.getNickname().size() == information.getMail().size() ||
+                information.getNickname().size() == information.getUserMail().size()) {
             return true;
         }
         return false;

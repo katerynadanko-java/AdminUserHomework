@@ -1,4 +1,4 @@
-package exceptions;
+package lesson6.exceptions;
 
 import java.io.IOException;
 

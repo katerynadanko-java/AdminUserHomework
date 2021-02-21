@@ -1,3 +1,5 @@
+package lesson1;
+
 public class User extends Person {
 
     public User() {

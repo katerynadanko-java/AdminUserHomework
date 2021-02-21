@@ -1,8 +1,10 @@
-import sun.applet.Main;
+package lesson2;
+
+import lesson2.InitializationData;
 
 import java.util.*;
 
-public class Main1 {
+public class Main {
 
     public static void main(String[] args) {
         InitializationData initialData = new InitializationData();
@@ -14,7 +16,6 @@ public class Main1 {
         System.out.println("Info after adding: ");
         System.out.println(initialData.add10value(information));
 
-        Main1 main1 = new Main1();
         List<Integer> integers = new ArrayList<>();
         for (int i = 0; i<5; i++) {
             integers.add(i);
@@ -30,22 +31,22 @@ public class Main1 {
         }
 
         System.out.println("Info after additionalMethod with <Integer>: ");
-        System.out.println(main1.additionalMethod(integers, information));
+        System.out.println(additionalMethod(integers, information));
         System.out.println("Info after additionalMethod with <Integer> & <Float>: ");
-        System.out.println(main1.additionalMethod(floats, information));
+        System.out.println(additionalMethod(floats, information));
         System.out.println("Info after additionalMethod with <Integer> & <Float> & <Byte>: ");
-        System.out.println(main1.additionalMethod(bytes, information));
+        System.out.println(additionalMethod(bytes, information));
 
     }
 
-    public Information additionalMethod(List<? extends Number> numbers, Information information) {
+    public static Information additionalMethod(List<? extends Number> numbers, Information information) {
 
         for (int i = 0; i < numbers.size(); i++) {
-            information.getPseudonym().add(String.valueOf(numbers.get(i)));
+            information.getNickname().add(String.valueOf(numbers.get(i)));
 
             if (!((information.getMail()).contains((numbers.get(i)) + "@mail.ua"))) {
                 information.getMail().add((numbers.get(i)) + "@mail.ua");
-                information.getUserMail().put((numbers.get(i)) + "@mail.ua", "pseudonym" + i);
+                information.getUserMail().put((numbers.get(i)) + "@mail.ua", "nickname" + i);
             }
         }
 
